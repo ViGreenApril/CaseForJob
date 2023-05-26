@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CaseForJob
@@ -24,7 +17,7 @@ namespace CaseForJob
             {
                 string name = nameTextBox.Text;
 
-                // Validate input
+                // Перевірка на присутність імені у працівника
                 if (string.IsNullOrWhiteSpace(name))
                 {
                     throw new ArgumentException("Name cannot be empty.");
@@ -33,7 +26,7 @@ namespace CaseForJob
                 int amountOfImages = Convert.ToInt32(amountOfImagesTextBox.Text);
                 int amountOfMinutes = Convert.ToInt32(amountOfMinutesTextBox.Text);
 
-                // Validate input
+                // Перевірка на присутність кількості картинок і кількості хвилин
                 if (amountOfImages <= 0 || amountOfMinutes <= 0)
                 {
                     throw new ArgumentException("Amount of images and amount of minutes must be positive numbers.");

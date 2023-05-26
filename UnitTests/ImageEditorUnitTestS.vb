@@ -8,7 +8,7 @@ Namespace UnitTests
 
         <Test>
         Public Sub CalculateTotalTime_ReturnsCorrectTotalTime()
-            ' Arrange
+            ' Готуємо дані до тесту
             Dim totalImages As Integer = 1000
             Dim workers As New List(Of Worker) From {
                 New Worker("Worker 1", 1, 2),
@@ -16,16 +16,16 @@ Namespace UnitTests
             }
             Dim imageEditor As New ImageEditor(totalImages, workers)
 
-            ' Act
+            ' Проводимо сам тест
             Dim totalTime As Double = imageEditor.CalculateTotalTime()
 
-            ' Assert
+            ' Звіряємо результат з очікуваним
             Assert.AreEqual(2500, totalTime)
         End Sub
 
         <Test>
         Public Sub CalculateEditedImagesPerWorker_ReturnsCorrectImagesPerWorker()
-            ' Arrange
+            ' Готуємо дані до тесту
             Dim totalImages As Integer = 1000
             Dim workers As New List(Of Worker) From {
                 New Worker("Worker 1", 1, 2),
@@ -33,10 +33,10 @@ Namespace UnitTests
             }
             Dim imageEditor As New ImageEditor(totalImages, workers)
 
-            ' Act
+            ' Проводимо сам тест
             Dim editedImagesPerWorker As Dictionary(Of Worker, Double) = imageEditor.CalculateEditedImagesPerWorker(totalImages, workers)
 
-            ' Assert
+            ' Звіряємо отримані результати
             Assert.AreEqual(200, editedImagesPerWorker(workers(0)))
             Assert.AreEqual(800, editedImagesPerWorker(workers(1)))
         End Sub
